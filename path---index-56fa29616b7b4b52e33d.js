@@ -1,0 +1,2 @@
+webpackJsonp([0x81b8806e4260],{505:function(e,t){e.exports={data:{site:{siteMetadata:{title:"Mtuchi Blog"}},allMarkdownRemark:{edges:[{node:{excerpt:"This is my first post on my new website, i hope \nto write and post most of the stuffs i work on. Disclaimer: Am not a blogger, So this is…",fields:{slug:"/hello-world/"},frontmatter:{date:"13 December, 2017",title:"Hello World"}}}]}},pathContext:{}}}});
+//# sourceMappingURL=path---index-56fa29616b7b4b52e33d.js.map
