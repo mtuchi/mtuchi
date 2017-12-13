@@ -28,8 +28,12 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          👋 My friends call me Mtuchi. 
-          I'm a Developer / Design Ninja and I​ want​ to​ be​ a ​Front-End​ ​Architect​​ ​when​ I grow​ up.
+          👋 My friends call me <a href="https://github.com/mtuchi">Mtuchi</a>. 
+          I'm a Developer / Design Ninja and I​ want​ to​ be​ a ​Front-End​ ​Architect​​ ​when​ I grow​ up.<br />
+          <i>Honorable mention</i><br/>
+          Co-organizer at <a href="https://darjs.github.io/" _target="blank">DarJS</a>,
+          Lead Organizer at <a href="http://daressalaam.sciencehackday.org/" _target="blank">ScienceHackDayDar</a>
+
         </p>
         <Follow username='mtuchidev' />
       </div>
