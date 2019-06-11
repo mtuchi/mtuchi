@@ -2,10 +2,10 @@ module.exports = {
   siteMetadata: {
     title: 'Mtuchi Blog',
     author: 'Emmanuel Evance',
-    description: 'A personal blog for mtuchi work life.',
-    siteUrl: 'http://mtuchi.me',
+    description: 'A personal blog for mtuchi life journey.',
+    siteUrl: 'http://mtuchi.dev',
   },
-  pathPrefix: '/mtuchi.github.io',
+  pathPrefix: '/mtuchi.dev',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
