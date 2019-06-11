@@ -1,7 +1,7 @@
 {
-  "name": "mtuchi.me",
-  "description": "Mtuchi Blog",
-  "version": "1.0.0",
+  "name": "mtuchi.dev",
+  "description": "Personal Blog",
+  "version": "1.0.1",
   "author": "Emmanuel Evance <mtuchidev@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
@@ -36,7 +36,7 @@
     "gh-pages": "^1.1.0",
     "prettier": "^1.8.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/mtuchi/mtuchi.dev#readme",
   "keywords": [
     "gatsby"
   ],
@@ -44,7 +44,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/mtuchi/mtuchi.dev.git"
   },
   "scripts": {
     "dev": "gatsby develop",
