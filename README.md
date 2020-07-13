@@ -1,6 +1,6 @@
 #### Jambo Dunia 👋
 
-My friends call me mtuchi and here's the everything you need to know about me
+My friends call me mtuchi and here's everything you need to know about me
 
 - 🔭 I’m currently working at [Irabu as COO](https://github.com/irabudev), [Rocket Inc as CTO](https://github.com/rocketinc)
 - 🌱 I’m currently learning [Backend For Frontend Pattern](https://divinglaravel.com/the-backend-for-frontend-pattern-for-monoliths), [Multitenancy in Laravel](https://tenancy.dev/)
