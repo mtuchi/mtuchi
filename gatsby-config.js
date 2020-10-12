@@ -1,17 +1,31 @@
 module.exports = {
+  pathPrefix: "/mtuchi",
   siteMetadata: {
-    title: 'Mtuchi Blog',
-    author: 'Emmanuel Evance',
-    description: 'A personal blog for mtuchi life journey.',
-    siteUrl: 'http://mtuchi.dev',
+    title: `Mtuchi`,
+    author: {
+      name: `@mtuchi`,
+      summary: `Technologist`,
+    },
+    description: `The journey, the drama, the coding`,
+    siteUrl: `https://mtuchi.dev`,
+    social: {
+      twitter: `mtuchidev`,
+    },
+    defaultImage: "images/bg.jpeg",
   },
-  pathPrefix: '/mtuchi.dev',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets`,
+        name: `assets`,
       },
     },
     {
@@ -30,9 +44,9 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
         ],
       },
     },
@@ -41,17 +55,33 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-62251910-1`,
       },
     },
     `gatsby-plugin-feed`,
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-typography',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        pathToConfigModule: 'src/utils/typography',
+        name: `mtuchi`,
+        short_name: `mtuchi`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `content/assets/gatsby-icon.png`,
       },
     },
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    `gatsby-plugin-offline`,
+    "gatsby-plugin-dark-mode",
+    `gatsby-plugin-postcss`,
   ],
 }

@@ -1,44 +1,70 @@
-import React from 'react'
-import { Follow } from 'react-twitter-widgets'
+/**
+ * Bio component that queries for data
+ * with Gatsby's useStaticQuery component
+ *
+ * See: https://www.gatsbyjs.org/docs/use-static-query/
+ */
 
-// Import typefaces
-import 'typeface-montserrat'
-import 'typeface-merriweather'
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Image from "gatsby-image"
 
-import profilePic from './profile-dp.png'
-import { rhythm } from '../utils/typography'
+import { rhythm } from "../utils/typography"
 
-class Bio extends React.Component {
-  render() {
-    return (
-      <div
+const Bio = () => {
+  const data = useStaticQuery(graphql`
+    query BioQuery {
+      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+        childImageSharp {
+          fixed(width: 50, height: 50) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      site {
+        siteMetadata {
+          author {
+            name
+            summary
+          }
+          social {
+            twitter
+          }
+        }
+      }
+    }
+  `)
+
+  const { author, social } = data.site.siteMetadata
+  return (
+    <div
+      style={{
+        display: `flex`,
+        marginBottom: rhythm(2.5),
+      }}
+    >
+      <Image
+        fixed={data.avatar.childImageSharp.fixed}
+        alt={author.name}
         style={{
-          display: 'flex',
-          marginBottom: rhythm(2.5),
+          marginRight: rhythm(1 / 2),
+          marginBottom: 0,
+          minWidth: 50,
+          borderRadius: `100%`,
         }}
-      >
-        <img
-          src={profilePic}
-          alt={`Emmanuel Evance`}
-          style={{
-            marginRight: rhythm(1 / 2),
-            marginBottom: 0,
-            width: rhythm(2),
-            height: rhythm(2),
-          }}
-        />
-        <p>
-          👋 My friends call me <a href="https://github.com/mtuchi">Mtuchi</a>. 
-          I'm a Developer / Design Ninja and I​ want​ to​ be​ a ​Front-End​ ​Architect​​ ​when​ I grow​ up.<br />
-          <i>Honorable mention</i><br/>
-          Co-organizer at <a href="https://darjs.github.io/" _target="blank">DarJS</a>,
-          Lead Organizer at <a href="http://daressalaam.sciencehackday.org/" _target="blank">ScienceHackDayDar</a>
-
-        </p>
-        <Follow username='mtuchidev' />
-      </div>
-    )
-  }
+        imgStyle={{
+          borderRadius: `50%`,
+        }}
+      />
+      <p>
+        Written by <strong>{author.name}</strong> {author.summary}
+        {` `}
+        <a href={`https://twitter.com/${social.twitter}`}>
+          You should follow him on Twitter
+        </a>
+      </p>
+    </div>
+  )
 }
 
 export default Bio
